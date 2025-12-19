@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  font-weight: 800 !important;
+}
 body {
   font-family: Georgia, serif;
 }
