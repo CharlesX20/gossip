@@ -1,13 +1,6 @@
 Gossip - Community Social Platform
 <div align="center">
 
-https://img.shields.io/badge/Gossip-Community_Social_Platform-FFD700
-https://img.shields.io/badge/Next.js-14.2-black
-https://img.shields.io/badge/TypeScript-5.0-blue
-https://img.shields.io/badge/PostgreSQL-16.0-336791
-https://img.shields.io/badge/Clerk-Auth-6C47FF
-https://img.shields.io/badge/License-MIT-green
-
 Your local social square. Share updates, follow neighbors, and join real-time conversations.
 
 Live Demo · Report Bug · Request Feature
