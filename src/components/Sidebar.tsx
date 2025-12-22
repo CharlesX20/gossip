@@ -10,11 +10,11 @@ import { Separator } from './ui/separator';
 import { LinkIcon, MapPinIcon } from 'lucide-react';
 
 async function Sidebar() {
-    const authUser = await currentUser();
-    if (!authUser) return <UnAuthenticatedSidebar />;
+  const authUser = await currentUser();
+  if (!authUser) return <UnAuthenticatedSidebar />;
 
-    const user = await getUserByClerkId(authUser.id);
-    if (!user) return null;
+  const user = await getUserByClerkId(authUser.id);
+  if (!user) return null;
   return (
     <div className="sticky top-20">
       <Card>
@@ -79,22 +79,42 @@ export default Sidebar;
 
 const UnAuthenticatedSidebar = () => (
   <div className="sticky top-20">
-    <Card>
+    <Card className="border-gray-200 dark:border-gray-800 shadow-sm">
       <CardHeader>
-        <CardTitle className="text-center text-xl font-semibold">Welcome Back!</CardTitle>
+        <CardTitle className="text-center text-xl font-semibold text-gray-900 dark:text-gray-100">
+          Welcome Back!
+        </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-center text-muted-foreground mb-4">
-          Login to access your profile and connect with others.
+        <p className="text-center text-muted-foreground mb-6 text-sm">
+          Sign in to access your profile and connect with others.
         </p>
+
         <SignInButton mode="modal">
-          <Button className="w-full" variant="outline">
-            Login
+          <Button
+            variant="outline"
+            className="w-full border-gray-300 dark:border-gray-700 hover:border-[#BF953F] dark:hover:border-[#FCF6BA] hover:translate-y-[-1px] transition-all"
+          >
+            Sign In
           </Button>
         </SignInButton>
+
+        <div className="relative my-4">
+          <div className="absolute inset-0 flex items-center">
+            <Separator className="w-full bg-gray-200 dark:bg-gray-800" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-white dark:bg-gray-950 px-2 text-muted-foreground">
+              Or
+            </span>
+          </div>
+        </div>
+
         <SignUpButton mode="modal">
-          <Button className="w-full mt-2" variant="default">
-            Sign Up
+          <Button
+            className="w-full bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-white hover:translate-y-[-1px] transition-transform shadow-sm"
+          >
+            Create Account
           </Button>
         </SignUpButton>
       </CardContent>

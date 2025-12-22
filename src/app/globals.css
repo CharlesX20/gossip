@@ -15,6 +15,32 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+  
+  /* Custom animation classes */
+  .animate-in {
+    animation: animateIn 0.3s ease-in-out;
+  }
+  
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 
@@ -83,5 +109,40 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Theme text utility that maintains white text in buttons */
+  .text-theme-gradient {
+    background: linear-gradient(to bottom, #BF953F, #FCF6BA, #B38728);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* Theme background utility */
+  .bg-theme-gradient {
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
+  }
+  
+  /* Ensure textarea text is visible in both modes */
+  textarea {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+
+  /* Fix for buttons to ensure black text stays black */
+  button.text-white {
+    color: black !important;
+  }
+  
+  /* Better focus states for dark mode */
+  .dark textarea:focus {
+    outline: none;
+    border-color: rgba(252, 246, 186, 0.5) !important;
+  }
+  
+  /* Light mode focus states */
+  textarea:focus {
+    outline: none;
+    border-color: rgba(191, 149, 63, 0.5) !important;
   }
 }
